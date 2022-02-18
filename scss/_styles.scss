@@ -118,6 +118,9 @@ input:focus {
     p {
         display: block;
     }
+    p.wrong-email {
+        display: none;
+    }
     img {
         display: block;
     }
@@ -126,7 +129,24 @@ input:focus {
         color: transparent;
     }
 }
-
+.wrong {
+    input {
+        color: $red;
+        border: 1px solid $red;
+    }
+    p.empty {
+        display: none;
+    }
+    p.wrong-email {
+        display: block;
+    }
+    img {
+        display: block;
+    }
+    ::placeholder {
+        color: $red;
+    }
+}
 button {
     color: white;
     font-weight: bolder;

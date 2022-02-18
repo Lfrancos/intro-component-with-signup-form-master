@@ -303,6 +303,10 @@ input:focus {
   display: block;
 }
 
+.error p.wrong-email {
+  display: none;
+}
+
 .error img {
   display: block;
 }
@@ -321,6 +325,39 @@ input:focus {
 
 .error ::placeholder {
   color: transparent;
+}
+
+.wrong input {
+  color: #ff6666;
+  border: 1px solid #ff6666;
+}
+
+.wrong p.empty {
+  display: none;
+}
+
+.wrong p.wrong-email {
+  display: block;
+}
+
+.wrong img {
+  display: block;
+}
+
+.wrong ::-webkit-input-placeholder {
+  color: #ff6666;
+}
+
+.wrong :-ms-input-placeholder {
+  color: #ff6666;
+}
+
+.wrong ::-ms-input-placeholder {
+  color: #ff6666;
+}
+
+.wrong ::placeholder {
+  color: #ff6666;
 }
 
 button {
