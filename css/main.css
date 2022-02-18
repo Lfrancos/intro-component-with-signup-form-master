@@ -174,6 +174,7 @@ body {
   color: white;
   padding: 1rem;
   font-family: "Poppins", sans-serif;
+  overflow: hidden;
 }
 
 body::after {
@@ -190,6 +191,10 @@ main {
   min-width: 327px;
   max-width: 450px;
   z-index: 2;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 h1 {
@@ -235,6 +240,7 @@ form {
 }
 
 form p {
+  text-align: center;
   color: #b9b6d3;
   margin: 0 2rem;
   font-size: 0.6875rem;
@@ -242,6 +248,7 @@ form p {
 }
 
 input {
+  color: #3e3c49;
   font-size: 0.875rem;
   width: 100%;
   padding: 1rem;
@@ -249,10 +256,71 @@ input {
   text-transform: capitalize;
   border-radius: .5rem;
   border: 0.5px solid #b9b6d3;
+  cursor: pointer;
 }
 
-input + input {
+input:focus {
+  outline-color: #6055a5;
+}
+
+.input + .input {
   margin-top: 1rem;
+}
+
+.input {
+  position: relative;
+  text-transform: none;
+}
+
+.input p {
+  display: none;
+  color: #ff6666;
+  text-align: right;
+  margin: .3rem 0;
+  font-size: 11px;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.input img {
+  display: none;
+  max-width: 30px;
+  position: absolute;
+  top: 15%;
+  right: 4%;
+}
+
+.error input {
+  color: #ff6666;
+  border: 1px solid #ff6666;
+}
+
+.error input:placeholder-shown {
+  color: #ff6666;
+}
+
+.error p {
+  display: block;
+}
+
+.error img {
+  display: block;
+}
+
+.error ::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.error :-ms-input-placeholder {
+  color: transparent;
+}
+
+.error ::-ms-input-placeholder {
+  color: transparent;
+}
+
+.error ::placeholder {
+  color: transparent;
 }
 
 button {
@@ -268,11 +336,69 @@ button {
   border: none;
   -webkit-box-shadow: 0 5px 0 0 #2aa26e;
           box-shadow: 0 5px 0 0 #2aa26e;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #14b871;
 }
 
 span {
   color: #ff6666;
   text-transform: capitalize;
   font-weight: 600;
+}
+
+footer {
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+}
+
+footer p {
+  text-align: center;
+  font-size: 11px;
+  margin: .4rem;
+}
+
+a {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1150px) {
+  main {
+    max-width: 1110px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .item {
+    max-width: 50%;
+  }
+  h1 {
+    font-size: 3.125rem;
+    max-width: 100%;
+    text-align: left;
+  }
+  p {
+    font-size: 16px;
+    text-align: left;
+    margin-left: 0;
+  }
+  .price h2 {
+    min-width: 100%;
+  }
+  form {
+    padding: 2rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */
